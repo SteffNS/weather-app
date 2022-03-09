@@ -9,7 +9,7 @@ const Forecast =  () =>{
     let [city, setCity ] = useState('');
     let [unit, setUnit ] = useState('metric');
     let [error, setError] = useState(false);
-    let[loading, setLoading] = useState(false);
+    let [loading, setLoading] = useState(false);
 
     const uriEncodedCity = encodeURIComponent(city);
 
