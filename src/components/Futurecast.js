@@ -1,8 +1,8 @@
 //imports
 import { useState } from "react";
-import Condition from "./Condition";
+import FutureCondition from "./FutureCondition";
 
-const Forecast =  () => {
+const Futurecast = () => {
 
     //variables
     let [responseObj, setResponseObj] = useState({});
@@ -13,12 +13,10 @@ const Forecast =  () => {
 
     const uriEncodedCity = encodeURIComponent(city);
 
-    function getForecast(e) {
-
+    function getFuturecast(e) {
         //prevent default
         e.preventDefault();
 
-        //check if user set a city
         if(city.length === 0){
             return setError(true);
         }
@@ -27,37 +25,30 @@ const Forecast =  () => {
         setResponseObj({});
         setLoading(true);
 
-        //fetch api info
-        fetch(`https://community-open-weather-map.p.rapidapi.com/weather?units=${unit}&q=${uriEncodedCity}`, {
+        //fetch api
+        fetch(`https://community-open-weather-map.p.rapidapi.com/forecast?q=${uriEncodedCity}&units=${unit}`, {
             "method": "GET",
             "headers": {
                 "x-rapidapi-host": "community-open-weather-map.p.rapidapi.com",
-                "x-rapidapi-key": process.env.REACT_APP_API_KEY
+                "x-rapidapi-key": process.env.REACT_APP_API_KEY,
             }
         })
-        .then(response => response.json())
         .then(response => {
-            if (response.cod !== 200) {
-                throw new Error();            
-            };
-            setResponseObj(response);
-            setLoading(false);
+            console.log(response);
         })
         .catch(err => {
-            setError(true);
-            setLoading(false);
+            console.error(err);
         });
-    };
+    }
 
     return(
         <div>
-            <h2>Find Current Weather Conditions</h2>
             <div>
                 {JSON.stringify(responseObj)}
-                <Condition responseObj = {responseObj} error = {error} loading = {loading} />
+                <FutureCondition responseObj = {responseObj} error = {error} loading = {loading} />
             </div>
             
-            <form onSubmit = {getForecast}>
+            <form onSubmit = {getFuturecast}>
                 
                 <input type="text" placeholder = 'Enter A City' value = {city} onChange = {(e) => setCity(e.target.value)} />
 
@@ -71,10 +62,10 @@ const Forecast =  () => {
                     Imperial    
                 </label>
 
-                <button type='submit'>Get Weather</button>
+                <button type='submit'>Get Future Weather</button>
             </form>
         </div>
     )
 }
 
-export default Forecast;
+export default Futurecast;
