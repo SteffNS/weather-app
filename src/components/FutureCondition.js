@@ -9,7 +9,7 @@ const FutureCondition = (props) => {
                     <p>
                         {props.responseObj.name}, {props.responseObj.sys.country}
                     </p>
-                    <p>testtttt</p>
+                    {props.responseObj.map()}
                 </div>
                 :
                 null

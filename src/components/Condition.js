@@ -12,10 +12,13 @@ const Condition = (props) => {
         return ("0"+h).slice(-2)+":"+m;
     }
 
-    function convertNum(time){
-        let timeX = new Date(time * 1000);
-        return timeX.toISOString();
-    }
+    function timeMaker(num){
+        let sunHour = new Date(num).getHours();
+        // let sunMin = new Date(num).getMinutes();
+        // let sunTime = `${sunHour}:${sunMin}`;
+        // return sunTime;
+        return sunHour;
+    };
 
     return(
         <div>
@@ -36,9 +39,8 @@ const Condition = (props) => {
                     <p>
                         Sunrise is at {timeConvert(props.responseObj.sys.sunrise)} and sunset is at {timeConvert(props.responseObj.sys.sunset)}
                         <br />
-                        Sunrise is at {convertNum(props.responseObj.sys.sunrise)}
-                        come back to this later?
-                        {/* {props.responseObj.weather[0].icon} */}
+                        Sunrise is at {timeMaker(props.responseObj.sys.sunrise)}
+                        Sunset is at {timeMaker(props.responseObj.sys.sunset)}
                     </p>
                 </div>
             : 

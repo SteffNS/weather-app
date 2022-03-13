@@ -26,18 +26,21 @@ const Futurecast = () => {
         setLoading(true);
 
         //fetch api
-        fetch(`https://community-open-weather-map.p.rapidapi.com/forecast?q=${uriEncodedCity}&units=${unit}`, {
+        fetch(`https://community-open-weather-map.p.rapidapi.com/climate/month?q=${uriEncodedCity}&units=${unit}`, {
             "method": "GET",
             "headers": {
                 "x-rapidapi-host": "community-open-weather-map.p.rapidapi.com",
                 "x-rapidapi-key": process.env.REACT_APP_API_KEY,
             }
         })
+        .then(response => response.json())
         .then(response => {
-            console.log(response);
+            setResponseObj(response);
+            setLoading(false);
         })
         .catch(err => {
-            console.error(err);
+            setError(true);
+            setLoading(false);
         });
     }
 
