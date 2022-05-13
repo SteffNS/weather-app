@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lateef&display=swap");
+
+html{
+    overflow-x: hidden;
+    background-color: #FDFBE1;
+}
+
+main, header{
+    font-family: 'Inter', sans-serif;
+}
+
+h1,h2,h3,h4{
+    font-family: 'Lateef', serif;
+    text-align: center;
+}
+
+h1{
+    font-size: 2.2rem;
+    // @media(min-width:$desktop){
+    //     margin-top: 20rem;
+    // }
+    // @media(min-width:$desktop-full){
+    //     margin-top: 22rem;
+    // }
+}
+
+h2{
+    font-size: 1.6rem;
+}
+
+h3{
+    font-size: 1.5rem;
+}
+
+main{
+    margin: 0 1rem;
+    line-height: 1.5;
+    margin-bottom: 5rem;
+
+    @media(min-width:$tablet){
+        max-width: 40rem;
+        margin: 0 auto;
+    }
+    @media(min-width:$desktop){
+        max-width: 55rem;
+        margin: 0 auto;
+    }
+}

@@ -1,2 +1,17 @@
+//utilities
+@import './_variables';
+
+//global styles
+@import './global';
+
 //nav
-@import './nav/_navbar';
+@import './_navbar';
+
+//home page
+@import './_home';
+
+//not found page
+@import './_notfound';
+
+//footer
+@import './_footer';

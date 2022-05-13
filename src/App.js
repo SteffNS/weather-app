@@ -13,8 +13,8 @@ import Footer from './components/Footer';
 function App() {
   return (
     <Router>
+        <Header />
         <main className = 'app-wrapper'>
-          <Header />
           <Routes>
             <Route path='/' exact='true' element={<PageHome />} />
             <Route path ='/about' element ={<PageAbout />} />

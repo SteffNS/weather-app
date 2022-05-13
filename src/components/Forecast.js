@@ -59,16 +59,18 @@ const Forecast =  () =>{
             <form onSubmit = {getForecast}>
                 
                 <input type="text" placeholder = 'Enter A City' value = {city} onChange = {(e) => setCity(e.target.value)} />
+                
+                <div className='label-wrapper'>
+                    <label>
+                        <input type="radio" name="units" value="metric" checked={unit === "metric"} onChange={(e)=>setUnit(e.target.value)} />
+                        Metric    
+                    </label>
 
-                <label>
-                    <input type="radio" name="units" value="metric" checked={unit === "metric"} onChange={(e)=>setUnit(e.target.value)} />
-                    Metric    
-                </label>
-
-                <label>
-                    <input type="radio" name="units" value="imperial" checked={unit === "imperial"} onChange={(e)=>setUnit(e.target.value)} />
-                    Imperial    
-                </label>
+                    <label>
+                        <input type="radio" name="units" value="imperial" checked={unit === "imperial"} onChange={(e)=>setUnit(e.target.value)} />
+                        Imperial    
+                    </label>
+                </div>
 
                 <button type='submit'>Get Weather</button>
             </form>

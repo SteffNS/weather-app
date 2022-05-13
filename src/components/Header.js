@@ -1,9 +1,12 @@
 import { NavLink } from "react-router-dom";
+import Logo  from '../images/logo.svg';
 
 const Header = () => {
     return(
         <header>
-            <NavLink to ='/' exact ='true'>Logo Home Img</NavLink>
+            <NavLink to ='/' exact ='true'>
+                <img src={Logo} alt="Logo for react weather app" />
+            </NavLink>
             <nav>
                 <ul>
                     <li>
