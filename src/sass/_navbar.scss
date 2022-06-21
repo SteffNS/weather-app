@@ -4,10 +4,18 @@ header{
     top: 0;
     left: 0;
     width: 100%;
-    height: 30%;
+    height: 15rem;
+
+    @media(min-width:$tablet){
+        height: 13rem;
+    }
+
+    @media(min-width:$desktop){
+        height: 12rem;
+    }
 
     img{
-        max-width: 21rem;
+        max-width: 17rem;
         margin-left: auto;
         margin-right: auto;
         display: block;
@@ -41,7 +49,6 @@ header{
                     }
 
                     &.active{
-                        // color: #2947A8;
                         color:#2B5700;
                     }
 
