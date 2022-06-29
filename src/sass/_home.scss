@@ -10,12 +10,18 @@ main{
         margin-top: 13.9rem;
     }
 
-    #home{
+    #home, #about{
 
         border-radius: 8px;
         background-color: rgba(255,255,255,0.5);
         box-shadow: 0 1px 12px rgba(0,0,0,0.25);
         border: 1px solid rgba(255,255,255,0.3);
+
+        padding: 0 1.2rem 0 1.2rem;
+
+        .loading-gif{ 
+            max-width: 3rem;
+        }
 
         form{
             margin-bottom: 2rem;
@@ -61,7 +67,7 @@ main{
                 }
             }
             input[type=text]{
-                width: 15rem;
+                width: 14rem;
                 padding: .3rem;
 
                 &:focus{
@@ -95,5 +101,9 @@ main{
                 }
             }
         }
+    }
+
+    #about{
+        padding-bottom: 5rem;
     }
 }

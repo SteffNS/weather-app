@@ -11,7 +11,7 @@ header{
     }
 
     @media(min-width:$desktop){
-        height: 12rem;
+        height: 12.5rem;
     }
 
     img{
@@ -43,6 +43,7 @@ header{
                     color: $link;
                     padding: 1rem;
                     text-decoration: none;
+                    transition: .2s;
 
                     &:visited{
                         color:$link;
@@ -53,7 +54,7 @@ header{
                     }
 
                     &:hover{
-                        color:$hover-link
+                        color:$hover-link;
                     }
                     
                     @media(min-width:$tablet){
@@ -61,7 +62,11 @@ header{
                     }
 
                     @media(min-width:$desktop){
-                        padding: 2rem;
+                        padding: 1.5rem;
+
+                        &:hover{
+                            box-shadow: -2px -2px inset green;
+                        }
                     }
                 }
             }

@@ -1,3 +1,4 @@
+import Loading from '../images/loading.gif';
 
 const Condition = (props) => {
 
@@ -7,7 +8,7 @@ const Condition = (props) => {
             {/* Error prompt if invalid city */}
             {props.error && <p>Error, please enter a valid city. Check your spelling.</p>}
             {/* Loading while fetching info from api */}
-            {props.loading && <p>Loading</p>}
+            {props.loading && <p><img className = 'loading-gif' src={Loading} alt="loading gif" /></p>}
 
             {props.responseObj.cod === 200 ? 
                 //if valid, outputs the info 
